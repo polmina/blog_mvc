@@ -1,0 +1,9 @@
+ir al routes i decirle al array possts que acepte una entrada "inserir" ste metodo
+sera el que sellame en el controller->$action
+
+luego vas al controller de posts postCOntroller i añades una nueva funcion, insertar en este caso
+ese metodo lo que hara es llamar directamente a una vista
+ 
+dentro de la carpeta posts la parte que se va a ver que ira a para a una url que ya tendra un ?controller=algo 
+y action=algo ue sera un nuevo metodo dentro de router.php donde habra dos metodos de insercion, ino para mostrar el html y otro para insertar
+luego de la isnercion deberia mostrar la vista mostrar todo, con algo que muestre que se ha añadido correctamente
