@@ -19,34 +19,40 @@ class PostsController {
         $post = Post::find($_GET['id']);
         require_once('views/posts/show.php');
     }
+
     public function insertForm() {
-        
+
         require_once('views/posts/insertForm.php');
     }
+
     public function insert() {
-        if(!Post::insert($_POST['autor'], $_POST['titol'], $_POST['missatge'])){
-            
+        
+        
+        if (!Post::insert($_POST['autor'], $_POST['titol'], $_POST['missatge'])) {
+
             return call('pages', 'error');
         }
         header("location:?controller=posts&action=index");
-        
     }
-    public function updateForm(){
+
+    public function updateForm() {
         $post = Post::find($_GET['id']);
         require_once('views/posts/updateForm.php');
     }
-    public function update(){
-        if(!Post::update($_POST['id'], $_POST['autor'], $_POST['titol'], $_POST['missatge'])){
+
+    public function update() {
+        if (!Post::update($_POST['id'], $_POST['autor'], $_POST['titol'], $_POST['missatge'])) {
             return call('pages', 'error');
         }
-        header("location:?controller=posts&action=show&id=".$_POST['id']);
+        header("location:?controller=posts&action=show&id=" . $_POST['id']);
     }
-     public function delete(){
-         if(!Post::delete($_GET['id'])){
-             //return call('pages', 'error');
-         }
-         header("location:?controller=posts&action=index");
-     }
+
+    public function delete() {
+        if (!Post::delete($_GET['id'])) {
+            //return call('pages', 'error');
+        }
+        header("location:?controller=posts&action=index");
+    }
 
 }
 

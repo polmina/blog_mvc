@@ -1,5 +1,5 @@
 <h1>INSERTAR POST</h1>
-<form action="?controller=posts&action=insert" method="post">
+<form action="?controller=posts&action=insert" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Autor</td>
@@ -13,9 +13,9 @@
             <td>Missatge</td>
             <td><input type='text' name='missatge'/></td>
         </tr>
-        <tr>
+         <tr>
             <td>Imatge</td>
-            <td><input type='text' name='imatge' /></td>
+            <td><input type="file" name="imatge" /></td>
         </tr>
         <tr>
             <td></td>

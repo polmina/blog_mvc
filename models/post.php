@@ -48,6 +48,8 @@ class Post {
 
     public static function insert($autor, $titol, $missatge) {
         $db = Db::getInstance();
+       
+        $foto=file_get_contents($_FILES['imatge']["tmp_name"]);
 
         $req = $db->prepare('INSERT INTO posts VALUES (null, :autor, :titol, :missatge, :data_creacio, :data_modificacio, :imatge)');
         $req->execute(array('autor' => $autor,
@@ -55,20 +57,23 @@ class Post {
                             'missatge' => $missatge,
                             'data_creacio' => date('Y-m-d H:i:s'),
                             'data_modificacio' => date('Y-m-d H:i:s'),
-                            'imatge' => 'imatge',
+                            'imatge' => $foto,
                         ));
 
-        //$post = $req->fetch();
         return true;
     }
     public static function update($id, $autor, $titol, $missatge){
         $db = Db::getInstance();
-        $req = $db->prepare('UPDATE posts SET autor=:autor, titol=:titol, missatge=:missatge, data_modificacio=:data_modificacio WHERE id=:id;');
+        
+        $foto=file_get_contents($_FILES['imatge']["tmp_name"]);
+        
+        $req = $db->prepare('UPDATE posts SET autor=:autor, titol=:titol, missatge=:missatge, data_modificacio=:data_modificacio, imatge=:imatge WHERE id=:id;');
         $req->execute(array('autor' => $autor,
                             'titol' => $titol,
                             'missatge' => $missatge,
                             'data_modificacio' => date('Y-m-d H:i:s'),
                             'id' =>$id,
+                            'imatge' => $foto,
                         ));
         return true;
     }
@@ -81,6 +86,7 @@ class Post {
         $req->execute(array('id' => $id));
         return true;
     }
+   
 
 }
 

@@ -1,5 +1,5 @@
 <h1>EDITAR POST</h1>
-<form action="?controller=posts&action=update" method="post">
+<form action="?controller=posts&action=update" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>ID</td>
@@ -19,7 +19,8 @@
         </tr>
         <tr>
             <td>Imatge</td>
-            <td><input type='text' name='imatge' value="<?php echo $post->imatge;?>"/></td>
+            <td><img src="data:image/png;base64,<?php echo base64_encode($post->imatge); ?>"/></td>
+            <td><input type='file' name='imatge'/></td>
         </tr>
         <tr>
             <td></td>
