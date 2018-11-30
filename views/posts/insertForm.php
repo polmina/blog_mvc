@@ -1,3 +1,4 @@
+<div class="content">
 <h1>INSERTAR POST</h1>
 <form action="?controller=posts&action=insert" method="post" enctype="multipart/form-data">
     <table>
@@ -26,5 +27,4 @@
         
     </table>
     
-</form>
-      
+</div>

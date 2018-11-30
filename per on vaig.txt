@@ -1,1 +1,3 @@
-ja estic amb el update, començo amb eliminar
+he acabat de posar una mica de estils, de moment amb 
+el que hi ha ja es suficient, ara haig de començcar
+amb el seguent punt

@@ -1,0 +1,106 @@
+header{
+    margin: 10px;
+
+}
+header a {
+    font-size: 36px;
+    background-color: lightblue;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-bottom: 1px solid blue;
+    
+}
+.content{
+    margin: 8px;
+    margin-top: 70px;
+}
+header a:hover{
+        background-color: lightsteelblue;
+
+}
+table{
+}
+tr{
+    height: 40px;
+}
+.insertPost{
+   margin:20px;
+}
+.insertPost a{
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    
+}
+.insertPost a:hover{
+
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+}
+
+table a{
+    font-size: 18px;
+    
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+    float:left;
+    
+}
+
+tr, td, th{
+    
+    padding: 10px;
+    border: 1px #ddd solid;
+} 
+table input{
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+table tr:nth-child(even) {
+    background-color: #fff;
+    
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+button{
+    font-size: 18px;
+    padding: 5px;
+    border: none;
+    background-color: lightblue;
+    border-bottom: 1px solid blue
+}
+button:hover{
+    background-color: lightsteelblue;
+    cursor: pointer;
+    
+}
+h1{
+    
+}
+footer{
+    background-color: darkgrey;
+    height: 10%;
+    width: 100%;
+
+    
+}
+img{
+    width:400px;
+    height:200px;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+}
+html{
+    width: 100%;
+    height: 100%;
+}

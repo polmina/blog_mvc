@@ -12,6 +12,10 @@ function call($controller, $action) {
             require_once('models/post.php');
             $controller = new PostsController();
             break;
+        case 'categories':
+            require_once('models/categoria.php');
+            $controller = new CategoriaController();
+            break;
     }
     // llama al m�todo guardado en $action
     $controller->{ $action }();
@@ -21,7 +25,8 @@ function call($controller, $action) {
 // consideramos estos valores "permitidos"
 // agregando una entrada para el nuevo controlador y sus acciones.
 $controllers = array('pages' => ['home', 'error'],
-                     'posts' => ['index', 'show', 'insertForm', 'insert', 'updateForm', 'update', 'delete']);
+                     'posts' => ['index','error',  'show', 'insertForm', 'insert', 'updateForm', 'update', 'delete'],
+                     'categories' => ['index', 'error']);
 // verifica que tanto el controlador como la acci�n solicitados est�n permitidos
 // Si alguien intenta acceder a otro controlador y/o acci�n, ser� redirigido al
 //m�todo de error del controlador de pages.
