@@ -28,7 +28,7 @@ class PostsController {
     public function insert() {
         
         
-        if (!Post::insert($_POST['autor'], $_POST['titol'], $_POST['missatge'])) {
+        if (!Post::insert($_POST['autor'], $_POST['categoria'], $_POST['titol'], $_POST['missatge'])) {
 
             return call('pages', 'error');
         }

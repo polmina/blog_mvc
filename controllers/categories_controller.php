@@ -20,7 +20,38 @@ class CategoriaController {
         require_once('views/categories/show.php');
     }
 
+    public function insertForm() {
+
+        require_once('views/categories/insertForm.php');
     }
 
+    public function insert() {
+
+        if (!Categoria::insert($_POST['nom'], $_POST['descripcio'], $_POST['public'])) {
+
+            return call('pages', 'error');
+        }
+        header("location:?controller=categories&action=index");
+    }
+
+    public function updateForm() {
+        $categoria = Categoria::find($_GET['id']);
+        require_once('views/categories/updateForm.php');
+    }
+
+    public function update() {
+        if (!Categoria::update($_POST['nom'], $_POST['descripcio'], $_POST['public'])) {
+            return call('pages', 'error');
+        }
+        header("location:?controller=categories&action=show&id=" . $_POST['id']);
+    }
+    public function delete() {
+        if (!Categoria::delete($_GET['id'])) {
+            //return call('pages', 'error');
+        }
+        header("location:?controller=categories&action=index");
+    }
+
+}
 
 ?>

@@ -4,8 +4,16 @@
         <td>  #<?php echo $post->id; ?></td>
     </tr>
     <tr>
+        <td>Categoria </td>
+        <td>  <?php echo Categoria::getNameById($post->categoria); ?></td>
+    </tr>
+    <tr>
         <td>Autor:</td>
         <td><?php echo $post->autor; ?></td>
+    </tr>
+    <tr>
+        <td>Titol:</td>
+        <td><?php echo $post->titol; ?></td>
     </tr>
     <tr>
         <td>Post:</td>

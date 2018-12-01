@@ -11,9 +11,9 @@
         <td><?php echo $categoria->descripcio; ?></td>
         <td><?php echo $categoria->data; ?></td>
         <td>
-            <a href='?controller=posts&action=show&id=<?php echo $categoria->id; ?>'>Ver contenido</a>
-            <a href='?controller=posts&action=updateForm&id=<?php echo $categoria->id; ?>'>Editar</a>
-            <a href='?controller=posts&action=delete&id=<?php echo $categoria->id; ?>'>Eliminar</a>
+            <a href='?controller=categories&action=show&id=<?php echo $categoria->id; ?>'>Ver contenido</a>
+            <a href='?controller=categories&action=updateForm&id=<?php echo $categoria->id; ?>'>Editar</a>
+            <a href='?controller=categories&action=delete&id=<?php echo $categoria->id; ?>'>Eliminar</a>
         </td>
     </tr>
 <?php }?>

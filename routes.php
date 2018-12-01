@@ -10,6 +10,7 @@ function call($controller, $action) {
             // necesitamos el modelo para despu�s consultar a la BBDD
 // desde el controlador
             require_once('models/post.php');
+            require_once('models/categoria.php');
             $controller = new PostsController();
             break;
         case 'categories':
@@ -26,7 +27,7 @@ function call($controller, $action) {
 // agregando una entrada para el nuevo controlador y sus acciones.
 $controllers = array('pages' => ['home', 'error'],
                      'posts' => ['index','error',  'show', 'insertForm', 'insert', 'updateForm', 'update', 'delete'],
-                     'categories' => ['index', 'error']);
+                     'categories' => ['index', 'error', 'show', 'insertForm','insert', 'updateForm', 'update', 'delete']);
 // verifica que tanto el controlador como la acci�n solicitados est�n permitidos
 // Si alguien intenta acceder a otro controlador y/o acci�n, ser� redirigido al
 //m�todo de error del controlador de pages.

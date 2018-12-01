@@ -7,6 +7,22 @@
             <td><input type='text' name='autor'></td>
         </tr>
         <tr>
+            <td>Categoria</td>
+            <td>
+                <select name='categoria'>
+               
+                <?php 
+                 $categories = Categoria::all();
+                 foreach ($categories as $categoria){
+                    echo "<option value =\"". strtolower($categoria->nom)."\">".$categoria->nom."</option>";
+                        }
+                    
+                ?>
+                </select>
+          
+            </td>
+        </tr>
+        <tr>
             <td>Titol</td>
             <td><input type='text' name='titol'/></td>
         </tr>

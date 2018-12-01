@@ -8,7 +8,7 @@
             <header>
                 <a href='/M07UF2/Exemples/blog_php_mvc'>Home</a>
                 <a href='?controller=posts&action=index'>Posts</a>
-                <a href='?controller=categories&action=index'>Categoties</a>
+                <a href='?controller=categories&action=index'>Categories</a>
             </header>
 
             <?php require_once('routes.php'); ?>
