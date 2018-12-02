@@ -1,2 +1,0 @@
-he fet que al updateform del posts es vegi quin select te per defecte,
-ara haig de fer el mateix per el update de les categories amb el "public",

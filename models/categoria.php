@@ -72,12 +72,14 @@ class Categoria {
 
         return true;
     }
-    public static function update($nom, $descripcio, $public){
+    public static function update($id, $nom, $descripcio, $public){
         $db = Db::getInstance();
         
         
-        $req = $db->prepare('UPDATE categories SET nom=:nom, descripcio=:descripcio, public=:public, data=:data;');
-        $req->execute(array('nom' => $nom,
+        $req = $db->prepare('UPDATE categories SET nom=:nom, descripcio=:descripcio, public=:public, data=:data WHERE id=:id;');
+        $req->execute(array(
+                            'id' =>$id,
+                            'nom' => $nom,
                             'descripcio' => $descripcio,
                             'public' => $public,
                             'data' => date('Y-m-d H:i:s'),

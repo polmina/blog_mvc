@@ -13,7 +13,7 @@
                     <?php
                     $categories = Categoria::all();
                     foreach ($categories as $categoria) {
-                        echo "<option value =\"" . strtolower($categoria->nom)."\"";
+                        echo "<option value =\"" . strtolower($categoria->id)."\"";
                         if($post->categoria==$categoria->id){echo "\" selected ";}
                         
                         echo">" . $categoria->nom . "</option>";

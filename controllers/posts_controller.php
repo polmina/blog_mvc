@@ -41,7 +41,7 @@ class PostsController {
     }
 
     public function update() {
-        if (!Post::update($_POST['id'], $_POST['autor'], $_POST['titol'], $_POST['missatge'])) {
+        if (!Post::update($_POST['id'],$_POST['categoria'], $_POST['autor'], $_POST['titol'], $_POST['missatge'])) {
             return call('pages', 'error');
         }
         header("location:?controller=posts&action=show&id=" . $_POST['id']);

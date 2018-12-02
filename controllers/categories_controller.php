@@ -40,7 +40,7 @@ class CategoriaController {
     }
 
     public function update() {
-        if (!Categoria::update($_POST['nom'], $_POST['descripcio'], $_POST['public'])) {
+        if (!Categoria::update($_POST['id'], $_POST['nom'], $_POST['descripcio'], $_POST['public'])) {
             return call('pages', 'error');
         }
         header("location:?controller=categories&action=show&id=" . $_POST['id']);

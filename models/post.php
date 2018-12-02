@@ -70,9 +70,12 @@ class Post {
     public static function update($id, $categoria, $autor, $titol, $missatge){
         $db = Db::getInstance();
         
-        $foto=file_get_contents($_FILES['imatge']["tmp_name"]);
+        try{
+            $foto=file_get_contents($_FILES['imatge']["tmp_name"]);
+        }catch(Exception $e){}
         
-        $req = $db->prepare('UPDATE posts SET autor=:autor, categoria=categoria, titol=:titol, missatge=:missatge, data_modificacio=:data_modificacio, imatge=:imatge WHERE id=:id;');
+        
+        $req = $db->prepare('UPDATE posts SET autor=:autor, categoria=:categoria, titol=:titol, missatge=:missatge, data_modificacio=:data_modificacio, imatge=:imatge WHERE id=:id;');
         $req->execute(array('autor' => $autor,
                             'categoria' =>$categoria,
                             'titol' => $titol,
